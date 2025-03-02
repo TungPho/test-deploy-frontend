@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 const url = import.meta.env.VITE_URL_DEPLOY_BACKEND;
-const socket = io(`${url}`, {
+const socket = io(`"https://test-deploy-backend-1-jpfp.onrender.com/"`, {
   transports: ["websocket"],
 }); // Khi deploy, thay URL backend
 
