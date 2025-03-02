@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 const url = import.meta.env.VITE_URL_DEPLOY_BACKEND;
-const socket = io(`${url}`); // Khi deploy, thay URL backend
+const socket = io(`${url}`, {
+  transports: ["websocket"],
+}); // Khi deploy, thay URL backend
 
 function App() {
   const [message, setMessage] = useState("");
