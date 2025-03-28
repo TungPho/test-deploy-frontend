@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 const url = import.meta.env.VITE_URL_DEPLOY_BACKEND;
-const socket = io(`ws://localhost:3000`); // Khi deploy, thay URL backend
+/// ket noi toi backend server
+const socket = io(`https://test-deploy-backend-1-ebhu.onrender.com/`); // Khi deploy, thay URL backend
 
 function App() {
   const [message, setMessage] = useState("");
