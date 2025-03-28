@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 const url = import.meta.env.VITE_URL_DEPLOY_BACKEND;
 /// ket noi toi backend server
-const socket = io(`https://test-deploy-backend-1-ebhu.onrender.com/`); // Khi deploy, thay URL backend
-
+const socket = io("https://test-deploy-backend-1-ebhu.onrender.com", {
+  withCredentials: true,
+  extraHeaders: {
+    "my-custom-header": "abcd",
+  },
+});
 function App() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
